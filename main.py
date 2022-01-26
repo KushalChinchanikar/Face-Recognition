@@ -1,8 +1,8 @@
 import cv2
-from simple_facerec import SimpleFacerec
+from face_recog import face_recog
 
 # Encode faces from a folder
-sfr = SimpleFacerec()
+sfr = face_recog()
 sfr.load_encoding_images("images/Kushal","Kushal")
 sfr.load_encoding_images("images/Tushar","Tushar")
 sfr.load_encoding_images("images/Chris Evans","Chris Evans")

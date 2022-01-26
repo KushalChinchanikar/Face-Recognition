@@ -4,7 +4,7 @@ import os
 import glob
 import numpy as np
 
-class SimpleFacerec:
+class face_recog:
     def __init__(self):
         self.known_face_encodings = []
         self.known_face_names = []
@@ -13,11 +13,9 @@ class SimpleFacerec:
         self.frame_resizing = 0.25
 
     def load_encoding_images(self, images_path, name):
-        """
-        Load encoding images from path
-        :param images_path:
-        :return:
-        """
+        
+        #Load encoding images from path
+        
         # Load Images
         images_path = glob.glob(os.path.join(images_path, "*.*"))
 
@@ -27,11 +25,8 @@ class SimpleFacerec:
         for img_path in images_path:
             img = cv2.imread(img_path)
             rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-            # Get the filename only from the initial file path.
-        # basename = os.path.basename(img_path)
-        # filename, ext) = os.path.splitext(basename)
             filename=name
+            
             # Get encoding
             img_encoding = face_recognition.face_encodings(rgb_img)[0]
 
